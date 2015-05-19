@@ -1,7 +1,5 @@
 #include <Servo.h>
 
-// This is a really great change that I just made.
-
 #define NOTES_MAX 4
 String NOTES[NOTES_MAX] = { "A", "B", "C", "D" };
 
