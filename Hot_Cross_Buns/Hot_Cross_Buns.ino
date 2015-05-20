@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-#define NOTES_MAX 30
-String NOTES[NOTES_MAX] = { "D", "QR", "C", "QR", "Bb", "QR", "HR",  "D", "QR", "C", "QR", "Bb", "QR", "HR", "Bb", "Bb", "Bb", "Bb", "C", "C", "C", "C", "QR","ER", "D", "QR", "C", "QR", "Bb"};
+#define NOTES_MAX 31
+String NOTES[NOTES_MAX] = { "D", "QR", "C", "QR", "Bb", "QR", "HR",  "D", "QR", "C", "QR", "Bb", "QR", "HR", "Bb", "Bb", "Bb", "Bb", "ER", "C", "C", "C", "C", "QR", "ER", "D", "QR", "C", "QR", "Bb", "WR"};
 
 int moveTime = 400; // Milliseconds
 
@@ -43,46 +43,48 @@ void loop() {
       servo1Position = SERVO1_RIGHT;
     } else if (theNote == "Bb") {
       servo2Position = SERVO2_LEFT;
-    }
-    //else if(theNote == "ER") {
-    // delay(measureSeconds/8 - moveTime);
-    else if (theNote == "QR") {
-      restTime = measureSeconds / 4;
-    } else if (theNote == "HR") {
-      restTime = measureSeconds / 2;
-    } else if (theNote == "WR") {
-      restTime = measureSeconds;
-    }
-
-    // Now we are going to use that information to
-    // move the servos
-    Serial.print("Moving servo1 to ");
-    Serial.println(servo1Position);
-    servo1.writeMicroseconds(servo1Position);
-    
-    Serial.print("Moving servo2 to ");
-    Serial.println(servo2Position);
-    servo2.writeMicroseconds(servo2Position);
-
-    if (restTime == 0) { // This is real note
-      Serial.print("Sent servo location commands, sleep for ");
-      Serial.print(moveTime);
-      Serial.println(" milliseconds to wait for servos to arrive at location");
-      delay(moveTime);
-
-      if (servo1Position != SERVO1_REST) {
-        Serial.println("Moving servo1 to rest position");
-        servo1.writeMicroseconds(SERVO1_REST);
+    } else if (theNote == "E") {
+      servo2Position = SERVO2_RIGHT;
+    } 
+      else if (theNote == "ER") {
+      restTime = measureSeconds / 8;
+      } else if (theNote == "QR") {
+        restTime = measureSeconds / 4;
+      } else if (theNote == "HR") {
+        restTime = measureSeconds / 2;
+      } else if (theNote == "WR") {
+        restTime = measureSeconds;
       }
 
-      if (servo2Position != SERVO2_REST) {
-        Serial.println("Moving servo2 to rest position");
-        servo2.writeMicroseconds(SERVO2_REST);
-      }
-    } else { // This is a rest
-      if (restTime > moveTime) { 
-        delay(restTime - moveTime);
+      // Now we are going to use that information to
+      // move the servos
+      Serial.print("Moving servo1 to ");
+      Serial.println(servo1Position);
+      servo1.writeMicroseconds(servo1Position);
+
+      Serial.print("Moving servo2 to ");
+      Serial.println(servo2Position);
+      servo2.writeMicroseconds(servo2Position);
+
+      if (restTime == 0) { // This is real note
+        Serial.print("Sent servo location commands, sleep for ");
+        Serial.print(moveTime);
+        Serial.println(" milliseconds to wait for servos to arrive at location");
+        delay(moveTime);
+
+        if (servo1Position != SERVO1_REST) {
+          Serial.println("Moving servo1 to rest position");
+          servo1.writeMicroseconds(SERVO1_REST);
+        }
+
+        if (servo2Position != SERVO2_REST) {
+          Serial.println("Moving servo2 to rest position");
+          servo2.writeMicroseconds(SERVO2_REST);
+        }
+      } else { // This is a rest
+        if (restTime > moveTime) {
+          delay(restTime - moveTime);
+        }
       }
     }
   }
-}
