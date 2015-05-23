@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-#define NOTES_MAX 100
-String NOTES[NOTES_MAX] = { "E", "QR", "D", "C", "ER", "D", "ER", "G", "ER", "G", "ER", "G", "ER", "QR", "D", "ER", "D", "ER", "D", "ER", "D", "ER", "QR", "E", "ER", "G", "ER", "G", "ER", "QR", "E", "QR", "D", "C", "ER", "D", "ER", "E", "ER", "E", "ER", "E", "ER", "E", "ER", "D", "ER", "D", "ER", "E", "ER", "D", "ER", "C"};
+#define NOTES_MAX 53
+String NOTES[NOTES_MAX] = { "E", "ER", "D", "ER", "C", "ER", "D", "ER", "G", "ER", "G", "ER", "G", "ER", "QR", "D", "ER", "D", "ER", "D", "ER", "QR", "E", "ER", "G", "ER", "G", "QR", "E", "QR", "D", "C", "ER", "D", "ER", "E", "ER", "E", "ER", "E", "ER", "E", "ER", "D", "ER", "D", "ER", "E", "ER", "D", "ER", "C", "WR",};
 
 int moveTime = 150; // Milliseconds
 
