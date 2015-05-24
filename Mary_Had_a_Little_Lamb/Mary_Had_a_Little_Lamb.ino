@@ -37,13 +37,13 @@ void loop() {
     int servo2Position = SERVO2_REST;
     int restTime = 0;
 
-    if (theNote == "E") {
+    if (theNote == "G") {
       servo1Position = SERVO1_LEFT;
-    } else if (theNote == "D") {
+    } else if (theNote == "E") {
       servo1Position = SERVO1_RIGHT;
     } else if (theNote == "C") {
       servo2Position = SERVO2_LEFT;
-    } else if (theNote == "G") {
+    } else if (theNote == "D") {
       servo2Position = SERVO2_RIGHT;
     }
     else if (theNote == "ER") {
