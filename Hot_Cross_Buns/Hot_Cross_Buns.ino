@@ -5,7 +5,7 @@ String NOTES[NOTES_MAX] = { "D", "QR", "C", "QR", "Bb", "QR", "HR",  "D", "QR", 
 
 int moveTime = 200; // Milliseconds
 
-int measureSeconds = 4000; // Milliseconds
+int measureSeconds = 2000; // Milliseconds
 
 int SERVO1_LEFT = 1400;
 int SERVO1_RIGHT = 1500;
