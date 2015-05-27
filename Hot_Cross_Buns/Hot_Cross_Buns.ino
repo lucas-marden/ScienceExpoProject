@@ -1,7 +1,7 @@
 #include <Servo.h>
 
 #define NOTES_MAX 31
-String NOTES[NOTES_MAX] = { "D", "QR", "C", "QR", "Bb", "QR", "HR",  "D", "QR", "C", "QR", "Bb", "QR", "HR", "Bb", "Bb", "Bb", "Bb", "ER", "C", "C", "C", "C", "QR", "D", "QR", "C", "QR", "Bb", "WR"};
+String NOTES[NOTES_MAX] = { "HIGH", "QR", "MEDIUM", "QR", "LOW", "QR", "HR",  "HIGH", "QR", "MEDIUM", "QR", "LOW", "QR", "HR", "LOW", "LOW", "LOW", "LOW", "ER", "MEDIUM", "MEDIUM", "MEDIUM", "MEDIUM", "QR", "HIGH", "QR", "MEDIUM", "QR", "LOW", "WR"};
 
 int moveTime = 200; // Milliseconds
 
@@ -37,14 +37,12 @@ void loop() {
     int servo2Position = SERVO2_REST;
     int restTime = 0;
 
-    if (theNote == "D") {
+    if (theNote == "HIGH") {
       servo1Position = SERVO1_LEFT;
-    } else if (theNote == "C") {
+    } else if (theNote == "MEDIUM") {
       servo1Position = SERVO1_RIGHT;
-    } else if (theNote == "Bb") {
+    } else if (theNote == "LOW") {
       servo2Position = SERVO2_LEFT;
-    } else if (theNote == "E") {
-      servo2Position = SERVO2_RIGHT;
     }
     else if (theNote == "ER") {
       restTime = measureSeconds / 8;
