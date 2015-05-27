@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-#define NOTES_MAX 53
-String NOTES[NOTES_MAX] = { "E", "ER", "D", "ER", "C", "ER", "D", "ER", "G", "ER", "G", "ER", "G", "ER", "QR", "D", "ER", "D", "ER", "D", "ER", "QR", "E", "ER", "G", "ER", "G", "QR", "E", "QR", "D", "C", "ER", "D", "ER", "E", "ER", "E", "ER", "E", "ER", "E", "ER", "D", "ER", "D", "ER", "E", "ER", "D", "ER", "C", "WR",};
+#define NOTeS_MAX 53
+String NOTeS[NOTeS_MAX] = { "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "ER", "MEDIUM-LOW", "ER", "HIGH", "ER", "HIGH", "ER", "HIGH", "ER", "QR", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "QR", "MEDIUM-HIGH", "ER", "HIGH", "ER", "HIGH", "QR", "MEDIUM-HIGH", "QR", "MEDIUM-LOW", "LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "WR",};
 
 int moveTime = 150; // Milliseconds
 
@@ -27,9 +27,9 @@ void setup()
 }
 
 void loop() {
-  for (int i = 0; i < NOTES_MAX; i++) {
+  for (int i = 0; i < NOTeS_MAX; i++) {
     // This is what note we will play during this part of the for() loop
-    String theNote = NOTES[i];
+    String theNote = NOTeS[i];
     Serial.println("I am going to play " + theNote);
 
     // Now we are going to determine where servo1 and servo2 should go
@@ -37,13 +37,13 @@ void loop() {
     int servo2Position = SERVO2_REST;
     int restTime = 0;
 
-    if (theNote == "G") {
+    if (theNote == "HIGH") {
       servo1Position = SERVO1_LEFT;
-    } else if (theNote == "E") {
+    } else if (theNote == "MEDIUM-HIGH") {
       servo1Position = SERVO1_RIGHT;
-    } else if (theNote == "C") {
+    } else if (theNote == "MEDIUM-LOW") {
       servo2Position = SERVO2_LEFT;
-    } else if (theNote == "D") {
+    } else if (theNote == "LOW") {
       servo2Position = SERVO2_RIGHT;
     }
     else if (theNote == "ER") {
