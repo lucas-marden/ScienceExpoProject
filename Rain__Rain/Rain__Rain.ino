@@ -1,11 +1,11 @@
 #include <Servo.h>
 
-#define NOTES_MAX 46
-String NOTES[NOTES_MAX] = { "HIGH", "QR", "MEDIUM-LOW", "QR", "HIGH", "ER", "HIGH", "ER", "MEDIUM-LOW", "QR", "HIGH", "ER", "HIGH", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "HIGH", "ER", "HIGH", "ER", "MEDIUM-LOW", "QR", "HIGH", "QR", "MEDIUM-LOW", "QR", "HIGH", "QR", "MEDIUM-LOW", "QR", "HIGH", "ER", "HIGH", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "HIGH", "ER", "HIGH", "ER", "MEDIUM-LOW", "WR"};
+#define NOTES_MAX 45
+String NOTES[NOTES_MAX] = { "F", "QR", "D", "QR", "F", "ER", "F", "ER", "D", "QR", "F", "ER", "F", "ER", "D", "ER", "Eb", "ER", "F", "ER", "F", "ER", "D", "QR", "F", "QR", "D", "QR", "F", "QR", "D", "QR", "F", "ER", "F", "ER", "D", "ER", "Eb", "F", "ER", "F", "ER", "D", "wR"};
 
-int moveTime = 150; // Milliseconds
+int moveTime = 400; // Milliseconds
 
-int measureSeconds = 3000; // Milliseconds
+int measureSeconds = 4000; // Milliseconds
 
 int SERVO1_LEFT = 1400;
 int SERVO1_RIGHT = 1500;
@@ -37,11 +37,11 @@ void loop() {
     int servo2Position = SERVO2_REST;
     int restTime = 0;
 
-    if (theNote == "HIGH") {
+    if (theNote == "F") {
       servo1Position = SERVO1_LEFT;
-    } else if (theNote == "MEDIUM-HIGH") {
+    } else if (theNote == "Eb") {
       servo1Position = SERVO1_RIGHT;
-    } else if (theNote == "MEDIUM-LOW") {
+    } else if (theNote == "D") {
       servo2Position = SERVO2_LEFT;
     }
     else if (theNote == "ER") {
