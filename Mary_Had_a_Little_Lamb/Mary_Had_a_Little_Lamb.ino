@@ -1,7 +1,7 @@
 #include <Servo.h>
 
-#define NOTeS_MAX 53
-String NOTeS[NOTeS_MAX] = { "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "ER", "MEDIUM-LOW", "ER", "HIGH", "ER", "HIGH", "ER", "HIGH", "ER", "QR", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "QR", "MEDIUM-HIGH", "ER", "HIGH", "ER", "HIGH", "QR", "MEDIUM-HIGH", "QR", "MEDIUM-LOW", "LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "WR",};
+#define NOTES_MAX 53
+String NOTES[NOTES_MAX] = { "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "ER", "MEDIUM-LOW", "ER", "HIGH", "ER", "HIGH", "ER", "HIGH", "ER", "QR", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "QR", "MEDIUM-HIGH", "ER", "HIGH", "ER", "HIGH", "QR", "MEDIUM-HIGH", "QR", "MEDIUM-LOW", "LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "MEDIUM-LOW", "ER", "MEDIUM-HIGH", "ER", "MEDIUM-LOW", "ER", "LOW", "WR",};
 
 int moveTime = 150; // Milliseconds
 
