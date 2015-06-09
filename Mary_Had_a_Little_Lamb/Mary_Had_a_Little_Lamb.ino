@@ -27,9 +27,9 @@ void setup()
 }
 
 void loop() {
-  for (int i = 0; i < NOTeS_MAX; i++) {
+  for (int i = 0; i < NOTES_MAX; i++) {
     // This is what note we will play during this part of the for() loop
-    String theNote = NOTeS[i];
+    String theNote = NOTES[i];
     Serial.println("I am going to play " + theNote);
 
     // Now we are going to determine where servo1 and servo2 should go

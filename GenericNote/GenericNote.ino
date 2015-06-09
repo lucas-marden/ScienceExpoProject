@@ -1,6 +1,6 @@
 #include <Servo.h>
 
-#define NOTES_MAX 31
+#define NOTES_MAX 4
 String NOTES[NOTES_MAX] = { "A", "B", "C", "D"};
 
 int moveTime = 400; // Milliseconds
